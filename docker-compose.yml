@@ -5,7 +5,7 @@ volumes:
     driver: local
     
 services:
-  app:
+  portainer:
     container_name: portainer
     restart: always
     image: 'portainer/portainer-ce:latest'
@@ -15,4 +15,4 @@ services:
       - '8000:8000'
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - portainer_data:/data
+      - /data/protainer:/data
