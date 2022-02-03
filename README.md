@@ -1,3 +1,4 @@
 # portainer-prometheus-grafana-nodeexportor
 
-docker volume create portainer_data
+1. docker volume create portainer_data
+2. docker-compose up -d
