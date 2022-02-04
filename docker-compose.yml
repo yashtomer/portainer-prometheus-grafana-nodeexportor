@@ -7,6 +7,9 @@ volumes:
   prometheus-data:
     driver: local
     
+  grafana-data:
+    driver: local
+    
 services:
   portainer:
     container_name: portainer
@@ -41,3 +44,12 @@ services:
     restart: unless-stopped
     volumes:
       - '/:/host:ro,rslave'
+      
+  grafana:
+    image: grafana/grafana-oss:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+    restart: unless-stopped
